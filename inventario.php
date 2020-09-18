@@ -41,7 +41,16 @@
                     while ($dado = mysqli_fetch_assoc($dados1)) 
                     { ?>
                         <tr>
-                            <td><?php echo $dado["patrimonio"]; ?></td>
+                            <td><?php echo $dado["patrimonio"]; ?>
+                                <select>
+                                <?php
+                                    
+                                    while ($dado2 = mysqli_fetch_assoc($dados2)) 
+                                    { ?>
+                                        <option ><?php echo $dado2["patrimonio"]; ?></option>
+                                    <?php } $dados2 = $mysqli->query($consulta2) or die($mysqli->error); ?>
+                                </select>
+                            </td>
                             <td><?php echo $dado["descricao"]; ?></td>
                             <td><?php echo $dado["status"]; ?></td>
                             <td><?php echo $dado["proprietario"]; ?></td>
@@ -50,7 +59,7 @@
                             
                             
                         </tr>       
-                <?php }?>
+                <?php   }?>
             </table>         
                             
      
