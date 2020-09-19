@@ -43,19 +43,64 @@
                         <tr>
                             <td><?php echo $dado["patrimonio"]; ?>
                                 <select>
-                                <?php
-                                    
+                                <?php   
+                                    $dados2 = $mysqli->query($consulta2) or die($mysqli->error);  
                                     while ($dado2 = mysqli_fetch_assoc($dados2)) 
                                     { ?>
                                         <option ><?php echo $dado2["patrimonio"]; ?></option>
-                                    <?php } $dados2 = $mysqli->query($consulta2) or die($mysqli->error); ?>
+                              <?php }  ?>
                                 </select>
                             </td>
-                            <td><?php echo $dado["descricao"]; ?></td>
-                            <td><?php echo $dado["status"]; ?></td>
-                            <td><?php echo $dado["proprietario"]; ?></td>
-                            <td><?php echo $dado["posicao"]; ?></td>
-                            <td><?php echo $dado["usuario"]; ?></td>
+                            <td><?php echo $dado["descricao"]; ?>
+                            <select>
+                                <?php   
+                                    $dados3 = $mysqli->query($consulta3) or die($mysqli->error);  
+                                    while ($dado3 = mysqli_fetch_assoc($dados3)) 
+                                    { ?>
+                                        <option ><?php echo $dado3["descricao"]; ?></option>
+                              <?php }  ?>
+                                </select>
+                            </td>
+                            <td><?php echo $dado["status"]; ?>
+                            <select>
+                                <?php   
+                                    $dados4 = $mysqli->query($consulta4) or die($mysqli->error);  
+                                    while ($dado4 = mysqli_fetch_assoc($dados4)) 
+                                    { ?>
+                                        <option ><?php echo $dado4["status"]; ?></option>
+                              <?php }  ?>
+                                </select>
+                            </td>
+                            <td><?php echo $dado["proprietario"]; ?>
+                            <select>
+                                <?php   
+                                    $dados5 = $mysqli->query($consulta5) or die($mysqli->error);  
+                                    while ($dado5 = mysqli_fetch_assoc($dados5)) 
+                                    { ?>
+                                        <option ><?php echo $dado5["proprietario"]; ?></option>
+                              <?php }  ?>
+                                </select>
+                            </td>
+                            <td><?php echo $dado["posicao"]; ?>
+                            <select>
+                                <?php   
+                                    $dados6 = $mysqli->query($consulta6) or die($mysqli->error);  
+                                    while ($dado6 = mysqli_fetch_assoc($dados6)) 
+                                    { ?>
+                                        <option ><?php echo $dado6["posicao"]; ?></option>
+                              <?php }  ?>
+                                </select>
+                            </td>
+                            <td><?php echo $dado["usuario"]; ?>
+                            <select>
+                                <?php   
+                                    $dados7 = $mysqli->query($consulta7) or die($mysqli->error);  
+                                    while ($dado7 = mysqli_fetch_assoc($dados7)) 
+                                    { ?>
+                                        <option ><?php echo $dado7["usuario"]; ?></option>
+                              <?php }  ?>
+                                </select>
+                            </td>
                             
                             
                         </tr>       
