@@ -8,98 +8,32 @@ fieldset{
         height: 510px;
         width: 440px;     
         }
-
-#testa{
-        border: 1px black solid;
+  
+ #sect{
         background-color: rgb(236, 244, 245);
-        height: 210px;
-        width: 440px;    
-}
-
-.tecladisplay{       
-                width: 90px;
-                height: 70px;
-                font: normal 35pt italic;
-                border: 1px black solid;
-                 background-color: rgb(224, 222, 218);
-             }
+        }
         
-.teclas{
-        font: normal 35pt italic;
-        border: 1px black solid;
-         width: 80px;
-        }
-
-#link1{
-        font-size: 50px;
-        text-decoration: none;
-        color:#000000;     
-        }
-  
-  
+        .tabelaEditavel {
+                border:solid 1px;
+                width:100%
+            }
+            
+            .tabelaEditavel td {
+                border:solid 1px;
+            }
+            
+            .tabelaEditavel .celulaEmEdicao {
+                padding: 0;
+            }
+            
+            .tabelaEditavel .celulaEmEdicao input[type=text]{
+                width:100%;
+                border:0;
+                background-color:rgb(255,253,210);
+            }
 footer{
         color: gainsboro;
         text-align: center;
- 
-      }
-#footer{
         margin-top: 120px;
-}
+      }
 
-
-
-#sect{
-        background-color: rgb(236, 244, 245);
-     }
-
-
-@media screen and (min-height: 730px)
-{
-
-        #main{
-                margin-top: 40px;
-             }
-        
-        #logo1{
-                width: 200px;
-              }
-        #logo2{
-                width: 200px;
-              }   
-}
-
-
-
-@media screen and (max-width: 415px)
-{
-        
-        input[name="valor"] {
-                width: 155px;
-                
-              }
-        input[name="date"] {
-                width: 140px;
-                
-              }
-        #select{
-                width: 100px; 
-        }
-            
-              
-}
-@media screen and (max-width: 321px)
-{
-        
-        input[name="valor"] {
-                width: 145px;
-                
-              }
-        input[name="date"] {
-                width: 145px;
-                
-              }
-        #select{
-                width: 90px; 
-        }
-              
-}
