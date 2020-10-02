@@ -45,9 +45,9 @@
                 <?php
                     while ($dado = mysqli_fetch_assoc($dados1)) 
                     { ?>
-                        <tr >
+                        <tr class= "row">
                             <td class= "cell "><p class="parag"><?php echo $dado["patrimonio"]; ?></p>
-                                <select class= "selec" >
+                                <select class= "selec" name="patri" >
                                 <?php   
                                     $dados2 = $mysqli->query($consulta2) or die($mysqli->error);  
                                     while ($dado2 = mysqli_fetch_assoc($dados2)) 
@@ -107,7 +107,15 @@
                                 </select>
                             </td>
                             <td>
-                            <i class="far fa-check-circle btn btn-outline-success buttons" style="font-size: 1.5em;"></i>
+                            <form action="update.php" method="get">
+                                <input type = "text" name="patrimonio" class ="patri" value="false" >
+                                <input type = "text" name="descricao"  value="false" hidden>
+                                <input type = "text" name="status" value ="false" hidden>
+                                <input type = "text" name="proprietario"  value ="false" hidden>
+                                <input type = "text" name="posicao"  value ="false" hidden>
+                                <input type = "text" name="usuario"  value ="false" hidden>
+                                <button class="far fa-check-circle btn btn-outline-success buttons" style="font-size: 1.5em;"></button>
+                            </form>
                             </td>
                             
                         </tr>       
