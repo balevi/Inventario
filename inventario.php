@@ -24,10 +24,11 @@
     <img src="https://4.bp.blogspot.com/-m1WwbPYUV0U/VdHSD1q6fFI/AAAAAAAACCw/esmMxWGi58g/s1600/prodeb.jpg"  id="logo2" class="rounded mx-auto d-block my-2" alt="prodeb" width="100px" heigth="100px">
                             
     <section id="sect" >
+    <div class="d-flex justify-content-center"><i  style="font-size: 2em;">Relação de Patrimônios - CSOL 5</i> </div>
             <nav class="navbar navbar-light bg-light">
 
             </nav>
-            <table class="table table-hover table-sm table-striped" id="tabela">
+            <table class="table table-hover table-sm" id="tabela">
                 <thead class="thead-dark">
                     <tr>
                         <th><h5>Patrimonio</h5></th>
@@ -44,8 +45,8 @@
                 <?php
                     while ($dado = mysqli_fetch_assoc($dados1)) 
                     { ?>
-                        <tr>
-                            <td class= "cell"><p class="parag"><?php echo $dado["patrimonio"]; ?></p>
+                        <tr >
+                            <td class= "cell "><p class="parag"><?php echo $dado["patrimonio"]; ?></p>
                                 <select class= "selec" >
                                 <?php   
                                     $dados2 = $mysqli->query($consulta2) or die($mysqli->error);  
@@ -106,13 +107,13 @@
                                 </select>
                             </td>
                             <td>
-                            <i class="far fa-check-circle alert alert-success ml-5" style="font-size: 2em;"></i>
+                            <i class="far fa-check-circle btn btn-outline-success buttons" style="font-size: 1.5em;"></i>
                             </td>
                             
                         </tr>       
                 <?php   }?>
             </table>         
-                            
+            <div class="d-flex justify-content-center"><i class="fas fa-plus-square btn btn-outline-primary " style="font-size: 1.5em;"></i> </div>
      
                                      
     </section>
