@@ -71,8 +71,8 @@
                               <?php }  ?>
                                 </select>
                             </td>
-                            <td class= "cell"><p class="parag"><?php echo $dado["descricao"]; ?></p>
-                            <select  class= "selec">
+                            <td class= "cell"><p class="parag" id="<?php echo $dado["id"]; ?>"><?php echo $dado["descricao"]; ?></p>
+                            <select  class= "selec" name="descri">
                                 <?php   
                                     $dados3 = $mysqli->query($consulta3) or die($mysqli->error);  
                                     while ($dado3 = mysqli_fetch_assoc($dados3)) 
@@ -124,8 +124,8 @@
                             <td>
                             <form action="update.php" method="get">
                                 <input type = "text" name="patrimonio" class ="patri" value="false" hidden>
-                                <input type = "text" name="id" class ="id" value="false" hidden>
-                                <input type = "text" name="descricao"  value="false" hidden>
+                                <input type = "text" name="id" class ="id" value="false" >
+                                <input type = "text" name="descri" class= "descricao" value="false">
                                 <input type = "text" name="status" value ="false" hidden>
                                 <input type = "text" name="proprietario"  value ="false" hidden>
                                 <input type = "text" name="posicao"  value ="false" hidden>

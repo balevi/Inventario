@@ -3,6 +3,7 @@ var selec = document.querySelectorAll('.selec');
 var parag = document.querySelectorAll('.parag');
 var row = document.querySelectorAll('.linha');
 var patri = document.querySelectorAll('.patri');
+var descri = document.querySelectorAll('.descricao');
 var buttons = document.querySelectorAll('.buttons');
 var id = document.querySelectorAll('.id');
 
@@ -27,6 +28,10 @@ function visivel(j,l) {
             parag[j].innerHTML = opt.value;
             if(selec[j].name == "patri"){
                 patri[l].value = opt.value;
+                id[l].value = parag[j].id;
+           }
+            if(selec[j].name == "descri"){
+                descri[l].value = opt.value;
                 id[l].value = parag[j].id;
            }
             });
