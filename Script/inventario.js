@@ -4,6 +4,7 @@ var parag = document.querySelectorAll('.parag');
 var row = document.querySelectorAll('.linha');
 var patri = document.querySelectorAll('.patri');
 var buttons = document.querySelectorAll('.buttons');
+var id = document.querySelectorAll('.id');
 
 
 function visivel(j,l) {
@@ -26,6 +27,7 @@ function visivel(j,l) {
             parag[j].innerHTML = opt.value;
             if(selec[j].name == "patri"){
                 patri[l].value = opt.value;
+                id[l].value = parag[j].id;
            }
             });
 }
@@ -40,15 +42,9 @@ for(var i=0; i<celular.length; i++) {
     if(p==6){
         p=0;
         r= r+1;
-        console.log(r);
     }
     
     selec[i].style.display = "none";
     visivel(i,r);
 
 }
-
-//for(var i=0; i<row.length; i++) {
-
-    //buttons[i].addEventListener('click', save );
-//}

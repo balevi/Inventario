@@ -25,6 +25,21 @@
                             
     <section id="sect" >
     <div class="d-flex justify-content-center"><i  style="font-size: 2em;">Relação de Patrimônios - CSOL 5</i> </div>
+    <?php       
+        session_start(); 
+        if (isset($_SESSION['res']))
+        { ?>
+            <div class="d-flex justify-content-center <?php echo $_SESSION['cor']; ?> alert-dismissible fade show" role="alert">
+                <?php echo $_SESSION['res'];  unset($_SESSION['res']); ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+        <?php } ?>
+
+           
+        
+           
             <nav class="navbar navbar-light bg-light">
 
             </nav>
@@ -46,7 +61,7 @@
                     while ($dado = mysqli_fetch_assoc($dados1)) 
                     { ?>
                         <tr class= "linha">
-                            <td class= "cell "><p class="parag"><?php echo $dado["patrimonio"]; ?></p>
+                            <td class= "cell "><p class="parag" id="<?php echo $dado["id"]; ?>" ><?php echo $dado["patrimonio"]; ?></p>
                                 <select class= "selec" name="patri" >
                                 <?php   
                                     $dados2 = $mysqli->query($consulta2) or die($mysqli->error);  
@@ -108,7 +123,8 @@
                             </td>
                             <td>
                             <form action="update.php" method="get">
-                                <input type = "text" name="patrimonio" class ="patri" value="false" >
+                                <input type = "text" name="patrimonio" class ="patri" value="false" hidden>
+                                <input type = "text" name="id" class ="id" value="false" hidden>
                                 <input type = "text" name="descricao"  value="false" hidden>
                                 <input type = "text" name="status" value ="false" hidden>
                                 <input type = "text" name="proprietario"  value ="false" hidden>
