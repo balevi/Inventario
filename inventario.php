@@ -45,7 +45,7 @@
                 <?php
                     while ($dado = mysqli_fetch_assoc($dados1)) 
                     { ?>
-                        <tr class= "row">
+                        <tr class= "linha">
                             <td class= "cell "><p class="parag"><?php echo $dado["patrimonio"]; ?></p>
                                 <select class= "selec" name="patri" >
                                 <?php   

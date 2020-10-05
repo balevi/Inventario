@@ -1,12 +1,12 @@
 var celular = document.querySelectorAll('.cell');
 var selec = document.querySelectorAll('.selec');
 var parag = document.querySelectorAll('.parag');
-var row = document.querySelectorAll('.row');
+var row = document.querySelectorAll('.linha');
 var patri = document.querySelectorAll('.patri');
 var buttons = document.querySelectorAll('.buttons');
 
 
-function visivel(j) {
+function visivel(j,l) {
     
    celular[j].addEventListener('mouseover', function(){
    
@@ -25,23 +25,26 @@ function visivel(j) {
             var opt = selec[j].options[selec[j].selectedIndex];
             parag[j].innerHTML = opt.value;
             if(selec[j].name == "patri"){
-  
-                patri[j].value = opt.value;
-            }
+                patri[l].value = opt.value;
+           }
             });
 }
 
 var r;
+var p;
+p = 0;
+r=0;
 for(var i=0; i<celular.length; i++) {
-      r++;
-    if(r==6){
-
-        r=o;
+      
+      p = p+1;
+    if(p==6){
+        p=0;
+        r= r+1;
+        console.log(r);
     }
     
     selec[i].style.display = "none";
-
-visivel(i);
+    visivel(i,r);
 
 }
 
