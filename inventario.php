@@ -52,7 +52,7 @@
                         <th><h5>Proprietário</h5></th>
                         <th><h5>Posição</h5></th>
                         <th><h5>Usuário</h5></th>
-                        <th></th>
+                        <th><i id="lock" class="fas fa-lock-open" style="font-size: 1.5em;"></i></th>
             
                     </tr>
                 </thead>
@@ -81,8 +81,8 @@
                               <?php }  ?>
                                 </select>
                             </td>
-                            <td class= "cell"><p class="parag"><?php echo $dado["status"]; ?></p>
-                            <select  class= "selec">
+                            <td class= "cell"><p class="parag" id="<?php echo $dado["id"]; ?>"><?php echo $dado["status"]; ?></p>
+                            <select  class= "selec" name= "stat">
                                 <?php   
                                     $dados4 = $mysqli->query($consulta4) or die($mysqli->error);  
                                     while ($dado4 = mysqli_fetch_assoc($dados4)) 
@@ -91,8 +91,8 @@
                               <?php }  ?>
                                 </select>
                             </td>
-                            <td class= "cell"><p class="parag"><?php echo $dado["proprietario"]; ?></p>
-                            <select  class= "selec">
+                            <td class= "cell"><p class="parag" id="<?php echo $dado["id"]; ?>"><?php echo $dado["proprietario"]; ?></p>
+                            <select  class= "selec" name= "propri">
                                 <?php   
                                     $dados5 = $mysqli->query($consulta5) or die($mysqli->error);  
                                     while ($dado5 = mysqli_fetch_assoc($dados5)) 
@@ -101,8 +101,8 @@
                               <?php }  ?>
                                 </select>
                             </td>
-                            <td class= "cell"><p class="parag"><?php echo $dado["posicao"]; ?></p>
-                            <select  class= "selec">
+                            <td class= "cell"><p class="parag" id="<?php echo $dado["id"]; ?>"><?php echo $dado["posicao"]; ?></p>
+                            <select  class= "selec" name= "posic">
                                 <?php   
                                     $dados6 = $mysqli->query($consulta6) or die($mysqli->error);  
                                     while ($dado6 = mysqli_fetch_assoc($dados6)) 
@@ -111,8 +111,8 @@
                               <?php }  ?>
                                 </select>
                             </td>
-                            <td class= "cell"><p class="parag"><?php echo $dado["usuario"]; ?></p>
-                            <select  class= "selec">
+                            <td class= "cell"><p class="parag" id="<?php echo $dado["id"]; ?>"><?php echo $dado["usuario"]; ?></p>
+                            <select  class= "selec" name= "usua">
                                 <?php   
                                     $dados7 = $mysqli->query($consulta7) or die($mysqli->error);  
                                     while ($dado7 = mysqli_fetch_assoc($dados7)) 
@@ -124,12 +124,12 @@
                             <td>
                             <form action="update.php" method="get">
                                 <input type = "text" name="patrimonio" class ="patri" value="false" hidden>
-                                <input type = "text" name="id" class ="id" value="false" >
-                                <input type = "text" name="descri" class= "descricao" value="false">
-                                <input type = "text" name="status" value ="false" hidden>
-                                <input type = "text" name="proprietario"  value ="false" hidden>
-                                <input type = "text" name="posicao"  value ="false" hidden>
-                                <input type = "text" name="usuario"  value ="false" hidden>
+                                <input type = "text" name="id" class ="id"value= "false" hidden>
+                                <input type = "text" name="descricao" class= "descri" value="false" hidden>
+                                <input type = "text" name="status" class= "stat" value ="false" hidden >
+                                <input type = "text" name="proprietario" class="propri" value ="false"hidden>
+                                <input type = "text" name="posicao" class= "posic" value ="false"hidden>
+                                <input type = "text" name="usuario" class= "usua" value ="false" hidden>
                                 <button class="far fa-check-circle btn btn-outline-success buttons" style="font-size: 1.5em;"></button>
                             </form>
                             </td>
