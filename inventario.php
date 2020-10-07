@@ -67,7 +67,7 @@
                                     $dados2 = $mysqli->query($consulta2) or die($mysqli->error);  
                                     while ($dado2 = mysqli_fetch_assoc($dados2)) 
                                     { ?>
-                                        <option ><?php echo $dado2["patrimonio"]; ?></option>
+                                        <option class="opt"><?php echo $dado2["patrimonio"]; ?></option>
                               <?php }  ?>
                                 </select>
                             </td>
@@ -137,7 +137,7 @@
                         </tr>       
                 <?php   }?>
             </table>         
-            <div class="d-flex justify-content-center"><i class="fas fa-plus-square btn btn-outline-primary " style="font-size: 1.5em;"></i> </div>
+            <div class="d-flex justify-content-center" id= "addrow"><i class="fas fa-plus-square btn btn-outline-primary " style="font-size: 1.5em;"></i> </div>
      
                                      
     </section>
