@@ -46,7 +46,7 @@
             <table class="table table-hover table-sm" id="tabela">
                 <thead class="thead-dark">
                     <tr>
-                        <th><h5>Patrimonio</h5></th>
+                        <th><h5>Patrimônio</h5></th>
                         <th><h5>Descrição</h5></th>
                         <th><h5>Status</h5></th>
                         <th><h5>Proprietário</h5></th>
@@ -67,7 +67,7 @@
                                     $dados2 = $mysqli->query($consulta2) or die($mysqli->error);  
                                     while ($dado2 = mysqli_fetch_assoc($dados2)) 
                                     { ?>
-                                        <option class="opt"><?php echo $dado2["patrimonio"]; ?></option>
+                                        <option class="opt-patri"><?php echo $dado2["patrimonio"]; ?></option>
                               <?php }  ?>
                                 </select>
                             </td>
@@ -77,7 +77,7 @@
                                     $dados3 = $mysqli->query($consulta3) or die($mysqli->error);  
                                     while ($dado3 = mysqli_fetch_assoc($dados3)) 
                                     { ?>
-                                        <option ><?php echo $dado3["descricao"]; ?></option>
+                                        <option class="opt-descri"><?php echo $dado3["descricao"]; ?></option>
                               <?php }  ?>
                                 </select>
                             </td>
@@ -87,7 +87,7 @@
                                     $dados4 = $mysqli->query($consulta4) or die($mysqli->error);  
                                     while ($dado4 = mysqli_fetch_assoc($dados4)) 
                                     { ?>
-                                        <option ><?php echo $dado4["status"]; ?></option>
+                                        <option class="opt-stat"><?php echo $dado4["status"]; ?></option>
                               <?php }  ?>
                                 </select>
                             </td>
@@ -97,7 +97,7 @@
                                     $dados5 = $mysqli->query($consulta5) or die($mysqli->error);  
                                     while ($dado5 = mysqli_fetch_assoc($dados5)) 
                                     { ?>
-                                        <option ><?php echo $dado5["proprietario"]; ?></option>
+                                        <option class="opt-propri"><?php echo $dado5["proprietario"]; ?></option>
                               <?php }  ?>
                                 </select>
                             </td>
@@ -107,7 +107,7 @@
                                     $dados6 = $mysqli->query($consulta6) or die($mysqli->error);  
                                     while ($dado6 = mysqli_fetch_assoc($dados6)) 
                                     { ?>
-                                        <option ><?php echo $dado6["posicao"]; ?></option>
+                                        <option class="opt-posic"><?php echo $dado6["posicao"]; ?></option>
                               <?php }  ?>
                                 </select>
                             </td>
@@ -117,7 +117,7 @@
                                     $dados7 = $mysqli->query($consulta7) or die($mysqli->error);  
                                     while ($dado7 = mysqli_fetch_assoc($dados7)) 
                                     { ?>
-                                        <option ><?php echo $dado7["usuario"]; ?></option>
+                                        <option class="opt-usua"><?php echo $dado7["usuario"]; ?></option>
                               <?php }  ?>
                                 </select>
                             </td>
@@ -137,7 +137,7 @@
                         </tr>       
                 <?php   }?>
             </table>         
-            <div class="d-flex justify-content-center" id= "addrow"><i class="fas fa-plus-square btn btn-outline-primary " style="font-size: 1.5em;"></i> </div>
+            <div class="d-flex justify-content-center"><i class="fas fa-plus-square btn btn-outline-primary " style="font-size: 1.5em;"  id= "addrow"></i> </div>
      
                                      
     </section>

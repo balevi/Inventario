@@ -11,8 +11,13 @@ var posic = document.querySelectorAll('.posic');
 var usua = document.querySelectorAll('.usua');
 var buttons = document.querySelectorAll('.buttons');
 var id = document.querySelectorAll('.id');
-var opts = document.querySelectorAll('.opt');
-var addrow = document.getElementById('addrow');
+var opts_patri = document.querySelectorAll('.opt-patri');
+var opts_descri = document.querySelectorAll('.opt-descri');
+var opts_stat = document.querySelectorAll('.opt-stat');
+var opts_propri = document.querySelectorAll('.opt-propri');
+var opts_posic = document.querySelectorAll('.opt-posic');
+var opts_usua = document.querySelectorAll('.opt-usua');
+var addrows = document.getElementById('addrow');
 
 
 
@@ -34,6 +39,9 @@ function fechado(){
         lock.setAttribute('class', 'fas fa-lock-open');
     })
 }
+
+
+
 
 
 
@@ -81,10 +89,12 @@ function visivel(j,l) {
                 id[l].value = parag[j].id;
            }
             });
-}
+        }
 
  
-           addrow.onclick = function addrow (){
+           addrows.onclick = function addrow ()
+           {
+        
                     // Captura a referência da tabela com id “minhaTabela”
             var table = document.getElementById("tabela");
             // Captura a quantidade de linhas já existentes na tabela
@@ -96,34 +106,102 @@ function visivel(j,l) {
             var newRow = table.insertRow(numOfRows);
  
             // Faz um loop para criar as colunas
+
             
-            for (var j = 0; j < 6; j++) {
+            for (var j = 0; j < 7; j++) {
                 // Insere uma coluna na nova linha 
                 newCell = newRow.insertCell(j);
                 // Insere um conteúdo na coluna
-                newCell.innerHTML = "<td><p><select class ='selected' ></select></p></td>";
-                var selected = document.querySelectorAll('.selected');
+                //newCell.innerHTML = "<td><p><select class ='selected'></select></p></td>";
+                newCell.innerHTML = "<td><p><select class ='selected'></select></p></td>";                  
+
+                    
+              
                 
-                for (var i = 0; i<row.length; i++){
+                
+                switch (j) {
+                        case 0:
+                            var cont = selec[0].options.length ;
+                            newCell.innerHTML = "<td><p><select class ='selected' name = 'patri'></select></p></td>";
+                        break;
+
+                        case 1:
+                            var cont = selec[1].options.length ;
+                            newCell.innerHTML = "<td><p><select class ='selected' name = 'descri' id='descri'></select></p></td>";
+                        break;
+
+                        case 2:
+                            var cont = selec[2].options.length ;
+                            newCell.innerHTML = "<td><p><select class ='selected' name = 'stat'></select></p></td>";
+                        break;
+
+                        case 3:
+                            var cont = selec[3].options.length ;
+                            newCell.innerHTML = "<td><p><select class ='selected' name = 'propri'></select></p></td>"
+                        break;
+            
+                        case 4:
+                            var cont = selec[4].options.length ;
+                            newCell.innerHTML = "<td><p><select class ='selected' name='posic'></select></p></td>";
+                        break;
+            
+                        case 5:
+                            var cont = selec[5].options.length ;
+                            newCell.innerHTML = "<td><p><select class ='selected' name='usua'></select></p></td>";
+                        break;
+                        
+                        case 6:
+                           var cont = 1 ;
+                        break;
+                }
+                  var selected = document.querySelectorAll('.selected');
+                for (var i = 0; i<cont; i++){
                     var opti = document.createElement('option');
-                    //opti.value = opts[i].value;
-                    opti.innerHTML = opts[i].value;
+
+            
+                    switch (j) {
+                        case 0:
+                            opti.innerHTML = opts_patri[i].value;
+                        break;
+
+                        case 1:
+                            opti.innerHTML = opts_descri[i].value;
+                        break;
+
+                        case 2:
+                            opti.innerHTML = opts_stat[i].value;
+                        break;
+
+                        case 3:
+                            opti.innerHTML = opts_propri[i].value;
+                        break;
+            
+                        case 4:
+                            opti.innerHTML = opts_posic[i].value;
+                        break;
+            
+                        case 5:
+                            opti.innerHTML = opts_usua[i].value;
+                        break;
+                        
+                        case 6:
+                            newCell.innerHTML = "<td><button class= 'far fa-check-circle btn btn-outline-success ' style='font-size: 1.5em;'></button></td>";
+
+            
+                    }
+                   
                     selected[j].appendChild(opti);
                     
                 }
                 
             }
             for(var i=0; i<selected.length; i++) {
-            selected[i].setAttribute('class', '');
+                selected[i].setAttribute('class', '');
             }
+            addrows.onclick = null;
         }
 
-        
-function calcopts(){
-    for(var i=0; i<8; i++) {
-    "<option>" + opts[i].value + "</option>";
-    }
-}
+ 
 
 
 var r;
